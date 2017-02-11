@@ -49,15 +49,18 @@ The final model is tested on the track.
 Data generation for this exercise is a little hard. Running the simulator with keyboard input doesn't really generate enough variability in the steering angles for it to be usable for training the network. Using the beta-simulator, that allows using a mouse based input goes a long way in improving the training data. Generating training data with a joystick would be even better, but I did not have access to one. 
 
 Training data was generated in two ways. First, enough data was generated where we try to stay in the middle of the road, as best as we can. This forms a good baseline dataset to start training a model. If a candidate model can go past the first couple of turns using this data, we proceed with using the candidate model. The images look like the following:
+
 ![image 1](images/middle_1.jpg)
 ![image_2](images/middle_2.jpg)
 ![image_3](images/middle_3.jpg)
 
 The dataset is augmented with more training data where we start the car on the edge or a little outside the edge and make our way to the middle of the road. This dataset helps in teaching the model to recover in case it goes a little off to the side. Both the first and the second datasets are shuffled and the model is training using this data. These images look like the following:
+
 ![image_1](images/side_1.jpg)
 ![image_2](images/side_2.jpg)
 
 Once this training is complete, we then start fine tuning the model, by now passing the same data with random mirror-ing. The angles for mirrored images are negated. This improves the model performance. These images look like the following:
+
 ![original image](images/orig_1.jpg)
 ![mirrored image](images/mirror_1.jpg)
 
