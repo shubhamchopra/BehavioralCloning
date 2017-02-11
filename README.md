@@ -33,9 +33,9 @@ I tried a couple of models here.
   23. An ELU activation layer
   24. A fully connected layer with 1 output
 
-We use Adam optimizer for training the model. The default implementation starts with a learning rate of 0.001. If we are `tuning` a pre-existing model, we start with a learning rate of 0.0001 instead.
+We use Adam optimizer for training the model. The default implementation starts with a learning rate of 0.001. If we are _tuning_ a pre-existing model, we start with a learning rate of 0.0001 instead.
 
-In both the architectures, convolution layers can be thought of as feature extractors that are used by the fully connected layers, which act as regression layer. 
+In both the architectures, convolution layers can be thought of as feature extractors that are used by the fully connected layers, which act as regression layer. ReLU is used to introduce non-linearity in the _feature extraction_ while ELU is used to introduce nonlinearity in the _regression_ layers. Using ELU worked better this way, as it likely gave some more flexibility to the regression layers. 
 
 ### Training Strategy:
 I try to reduce over-fitting by employing 3 strategies:
