@@ -7,11 +7,11 @@
 ## Training a model:
 A model can be trained like so:
 
-python model.py --training_dir {path to training directory} [--epochs {num epochs|default: 5}] [--batch_size {batch size|default: 128}] [--use_mirrored_data]
+`python model.py --training_dir <path to training directory> [--epochs <num epochs|default: 5>] [--batch_size <batch size|default: 128>] [--use_mirrored_data]`
 
 This generates file model.json and model.h5. These can be used to run the simulator in autonomous mode using drive.py like so:
 
-python drive.py model.json
+`python drive.py model.json`
 
 (Note that the model.h5 should be present in the same path as model.json)
 
