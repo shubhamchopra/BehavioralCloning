@@ -1,3 +1,8 @@
+## Cloning the repo:
+Since the model files are large, github only lets me upload it using [Git-LFS](https://git-lfs.github.com/). Please download and install git-lfs to be able to clone this repository. Note that after installation, you will have to run `git lfs install` for the git-lfs to be _initialized_ for use with any project.
+
+Without Git-LFS, the normal git clone command will not pull the model files (both model.json and model.h5) and the simulator.
+
 ## Project Files:
 * model.py: python code to create and train a model
 * drive.py: code to drive a car in autonomous mode (in the simulator!)
