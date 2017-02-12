@@ -4,6 +4,15 @@
 * model.h5 and model.json: A fitted model that behaves well in the autonomous mode (again in the simulator!)
 * README.md: An overview of the model
 
+## Training a model:
+A model can be trained like so:
+python model.py --training_dir {path to training directory} [--epochs {num epochs|default: 5}] [--batch_size {batch size|default: 128}] [--use_mirrored_data]
+
+This generates file model.json and model.h5. These can be used to run the simulator in autonomous mode using drive.py like so:
+python drive.py model.json
+
+(Note that the model.h5 should be present in the same path as model.json)
+
 ## Model Architecture:
 I tried a couple of models here.
 * [Comma.ai steering model](https://github.com/commaai/research/blob/master/train_steering_model.py) : This is a straightforward model that uses 3 convolutional layers followed by a fully connected dense layer that finally feeds into the output layer.
